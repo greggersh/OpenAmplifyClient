@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="/Users/greggersh/java/commons-codec-1.4/commons-codec-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/greggersh/java/commons-logging-1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/greggersh/java/jdom/build/jdom.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/greggersh/java/commons-httpclient-3.1/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
