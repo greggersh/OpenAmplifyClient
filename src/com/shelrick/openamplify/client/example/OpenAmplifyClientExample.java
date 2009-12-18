@@ -41,7 +41,6 @@ public class OpenAmplifyClientExample
 		String input = "I need a new dog.  My old dog was killed by a horrible fox in New Jersey.";
 		List<String> searchTermsList = new ArrayList<String>();
 		searchTermsList.add("fox");
-		String url = "http://baltimorejewish.com";
 		
 		try
 		{

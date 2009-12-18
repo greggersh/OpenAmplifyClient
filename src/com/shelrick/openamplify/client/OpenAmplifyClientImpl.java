@@ -22,8 +22,6 @@ package com.shelrick.openamplify.client;
 */
 import java.io.IOException;
 import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -282,7 +280,7 @@ public class OpenAmplifyClientImpl implements OpenAmplifyClient
 		List topTopicTopicResultElements = topTopicsElement.getChildren("TopicResult");
 		List<Topic> topTopics = parseTopicResults(topTopicTopicResultElements);
 		
-		List properNounTopicResultElements = properNounsElement.getChildren("TopicResult");
+		List properNounTopicResultElements = (List<Element>)properNounsElement.getChildren("TopicResult");
 		List<Topic> properNouns = parseTopicResults(properNounTopicResultElements);
 		
 		List locationResultsElement = locationsElement.getChildren("Result");
