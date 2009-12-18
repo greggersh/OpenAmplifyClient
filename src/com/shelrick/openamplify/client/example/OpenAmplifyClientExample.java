@@ -45,7 +45,7 @@ public class OpenAmplifyClientExample
 		
 		try
 		{
-			OpenAmplifyResponse response = oaClient.analyzeText(input, Analysis.ALL);
+			OpenAmplifyResponse response = oaClient.analyzeText(input, Analysis.ALL, 10);
 			for (Topic topic: response.getTopics().getTopTopics())
 			{
 				System.out.println(topic.getName());

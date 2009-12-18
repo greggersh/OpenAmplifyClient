@@ -31,8 +31,8 @@ public interface OpenAmplifyClient
 	public void setApiKey(String apiKey);
 	public String getApiKey();
 
-	public OpenAmplifyResponse analyzeText(String inputText, Analysis analysis) throws OpenAmplifyClientException;
-	public OpenAmplifyResponse analyzeUrl(String url, Analysis analysis) throws OpenAmplifyClientException;
-	public OpenAmplifyResponse searchText(String inputText, Analysis analysis, List<String> searchTermsList) throws OpenAmplifyClientException;
-	public OpenAmplifyResponse searchUrl(String url, Analysis analysis, List<String> searchTermsList) throws OpenAmplifyClientException;
+	public OpenAmplifyResponse analyzeText(String inputText, Analysis analysis, Integer maxTopicResults) throws OpenAmplifyClientException;
+	public OpenAmplifyResponse analyzeUrl(String url, Analysis analysis, Integer maxTopicResults) throws OpenAmplifyClientException;
+	public OpenAmplifyResponse searchText(String inputText, Analysis analysis, List<String> searchTermsList, Integer maxTopicResults) throws OpenAmplifyClientException;
+	public OpenAmplifyResponse searchUrl(String url, Analysis analysis, List<String> searchTermsList, Integer maxTopicResults) throws OpenAmplifyClientException;
 }

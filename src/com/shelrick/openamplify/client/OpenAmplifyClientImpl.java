@@ -71,13 +71,14 @@ public class OpenAmplifyClientImpl implements OpenAmplifyClient
 	}
 	
 	@Override
-	public OpenAmplifyResponse analyzeText(String inputText, Analysis analysis) throws OpenAmplifyClientException
+	public OpenAmplifyResponse analyzeText(String inputText, Analysis analysis, Integer maxTopicResults) throws OpenAmplifyClientException
 	{
 		List<NameValuePair> params = getBaseParams();
 		inputText = inputText.replaceAll("'@[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F]@'", " ");
 		params.add(new NameValuePair("inputtext", inputText));
 		params.add(new NameValuePair("analysis", analysis.type()));
-	
+		params.add(new NameValuePair("maxtopicresult", maxTopicResults.toString()));
+		
 		PostMethod postMethod = new PostMethod(apiUrl);
 		postMethod.addParameters(params.toArray(new NameValuePair[1]));
 					
@@ -87,11 +88,12 @@ public class OpenAmplifyClientImpl implements OpenAmplifyClient
 	}
 
 	@Override
-	public OpenAmplifyResponse analyzeUrl(String url, Analysis analysis) throws OpenAmplifyClientException
+	public OpenAmplifyResponse analyzeUrl(String url, Analysis analysis, Integer maxTopicResults) throws OpenAmplifyClientException
 	{
 		List<NameValuePair> params = getBaseParams();
 		params.add(new NameValuePair("sourceurl", url));
 		params.add(new NameValuePair("analysis", analysis.type()));
+		params.add(new NameValuePair("maxtopicresult", maxTopicResults.toString()));
 		
 		GetMethod getMethod = new GetMethod(apiUrl);
 		getMethod.setQueryString(params.toArray(new NameValuePair[1]));
@@ -101,12 +103,13 @@ public class OpenAmplifyClientImpl implements OpenAmplifyClient
 	}
 
 	@Override
-	public OpenAmplifyResponse searchText(String inputText, Analysis analysis, List<String> searchTermsList) throws OpenAmplifyClientException
+	public OpenAmplifyResponse searchText(String inputText, Analysis analysis, List<String> searchTermsList, Integer maxTopicResults) throws OpenAmplifyClientException
 	{
 		List<NameValuePair> params = getBaseParams();
 		params.add(new NameValuePair("inputtext", inputText));
 		params.add(new NameValuePair("analysis", analysis.type()));
 		params.add(new NameValuePair("searchTerms", getSearchTerms(searchTermsList)));
+		params.add(new NameValuePair("maxtopicresult", maxTopicResults.toString()));
 		
 		PostMethod postMethod = new PostMethod(apiUrl);
 		postMethod.addParameters(params.toArray(new NameValuePair[1]));
@@ -116,12 +119,13 @@ public class OpenAmplifyClientImpl implements OpenAmplifyClient
 	}
 	
 	@Override
-	public OpenAmplifyResponse searchUrl(String url, Analysis analysis, List<String> searchTermsList) throws OpenAmplifyClientException
+	public OpenAmplifyResponse searchUrl(String url, Analysis analysis, List<String> searchTermsList, Integer maxTopicResults) throws OpenAmplifyClientException
 	{
 		List<NameValuePair> params = getBaseParams();
 		params.add(new NameValuePair("sourceurl", url));
 		params.add(new NameValuePair("analysis", analysis.type()));
 		params.add(new NameValuePair("searchTerms", getSearchTerms(searchTermsList)));
+		params.add(new NameValuePair("maxtopicresult", maxTopicResults.toString()));
 		
 		GetMethod getMethod = new GetMethod(apiUrl);
 		getMethod.setQueryString(params.toArray(new NameValuePair[1]));
