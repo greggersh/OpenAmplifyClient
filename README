@@ -1,0 +1,11 @@
+See http://github.com/greggersh/OpenAmplifyClient/blob/master/src/com/shelrick/openamplify/client/example/OpenAmplifyClientExample.java
+for an example on how to use the client library to access the OpenAmplify API.
+
+The interface to the API is defined in:
+http://github.com/greggersh/OpenAmplifyClient/blob/master/src/com/shelrick/openamplify/client/OpenAmplifyClient.java
+
+Currently, a response parser for only the Topic sections of the response have been developed.
+
+Any questions, contact:
+Greg Gershman
+greg AT shelrick DOT com
